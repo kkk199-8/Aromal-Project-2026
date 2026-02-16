@@ -131,28 +131,28 @@ export default function Home() {
           <ScrollReveal stagger={0.15}>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
               <div className="bg-white rounded-2xl p-8 text-center shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
-                <div className="w-14 h-14 rounded-2xl bg-green flex items-center justify-center mx-auto mb-5">
+                <div className="w-14 h-14 rounded-full bg-green flex items-center justify-center mx-auto mb-5">
                   <Leaf className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-charcoal mb-3">{t("home.values.local.title")}</h3>
+                <h3 className="text-2xl font-handwriting text-charcoal mb-3" style={{ fontFamily: 'var(--font-caveat)' }}>{t("home.values.local.title")}</h3>
                 <p className="text-muted leading-relaxed text-sm">
                   {t("home.values.local.desc")}
                 </p>
               </div>
               <div className="bg-white rounded-2xl p-8 text-center shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
-                <div className="w-14 h-14 rounded-2xl bg-orange flex items-center justify-center mx-auto mb-5">
+                <div className="w-14 h-14 rounded-full bg-orange flex items-center justify-center mx-auto mb-5">
                   <Droplets className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-charcoal mb-3">{t("home.values.zero.title")}</h3>
+                <h3 className="text-2xl font-handwriting text-charcoal mb-3" style={{ fontFamily: 'var(--font-caveat)' }}>{t("home.values.zero.title")}</h3>
                 <p className="text-muted leading-relaxed text-sm">
                   {t("home.values.zero.desc")}
                 </p>
               </div>
               <div className="bg-white rounded-2xl p-8 text-center shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
-                <div className="w-14 h-14 rounded-2xl bg-green flex items-center justify-center mx-auto mb-5">
+                <div className="w-14 h-14 rounded-full bg-green flex items-center justify-center mx-auto mb-5">
                   <Recycle className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-charcoal mb-3">{t("home.values.plastic.title")}</h3>
+                <h3 className="text-2xl font-handwriting text-charcoal mb-3" style={{ fontFamily: 'var(--font-caveat)' }}>{t("home.values.plastic.title")}</h3>
                 <p className="text-muted leading-relaxed text-sm">
                   {t("home.values.plastic.desc")}
                 </p>

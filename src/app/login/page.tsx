@@ -27,6 +27,13 @@ export default function LoginPage() {
 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
+
+        // Specific Mock Credential Check
+        if (email === "therightfollowers@gmail.com" && password === "Kla!Hoxhaj2") {
+            window.location.href = "/profile";
+            return;
+        }
+
         const newErrors = validate();
         if (Object.keys(newErrors).length > 0) {
             setErrors(newErrors);
@@ -39,15 +46,20 @@ export default function LoginPage() {
     };
 
     return (
-        <main className="min-h-screen bg-transparent flex flex-col">
+        <main className="min-h-screen bg-[#FDFBF7] flex flex-col">
             <Header />
 
             <div className="flex-1 flex flex-col items-center justify-center py-20 px-4">
                 <div className={`w-full max-w-md ${shake ? "animate-shake" : ""}`}>
 
-                    <h1 className="text-center text-sm font-bold text-muted uppercase tracking-wider mb-8">
-                        {t("login.heading")}
-                    </h1>
+                    <div className="text-center mb-8">
+                        <span className="block text-3xl text-orange font-handwriting mb-2 rotate-[-2deg]" style={{ fontFamily: 'var(--font-caveat)' }}>
+                            {t("login.welcome")}
+                        </span>
+                        <h1 className="text-sm font-bold text-muted uppercase tracking-wider">
+                            {t("login.heading")}
+                        </h1>
+                    </div>
 
                     {/* Social Auth */}
                     <div className="flex justify-center gap-6 mb-12">

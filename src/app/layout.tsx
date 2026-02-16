@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Outfit, Cormorant_Garamond } from "next/font/google";
+import { Outfit, Cormorant_Garamond, Caveat } from "next/font/google";
 import "./globals.css";
 import { ClientProviders } from "@/components/ClientProviders";
 import { IntroScreen } from "@/components/ui/IntroScreen";
@@ -12,6 +12,11 @@ const outfit = Outfit({
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
   weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+});
+
+const caveat = Caveat({
+  variable: "--font-caveat",
   subsets: ["latin"],
 });
 
@@ -45,7 +50,7 @@ export default function RootLayout({
   return (
     <html lang="sq">
       <body
-        className={`${outfit.variable} ${cormorant.variable} antialiased`}
+        className={`${outfit.variable} ${cormorant.variable} ${caveat.variable} antialiased`}
       >
         <ClientProviders>
           <IntroScreen>

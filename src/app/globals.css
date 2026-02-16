@@ -37,54 +37,89 @@
   --brand-gradient: linear-gradient(135deg, #F28E46 0%, #9DC545 100%);
 
   /* ─── Legacy aliases (Tailwind mapping) ─── */
-  --background: var(--bg-app);
-  --foreground: var(--text-primary);
+  --background: 180 3% 20%;
+  /* Charcoal */
+  --foreground: 180 3% 20%;
+  /* Charcoal */
+  --card: 0 0% 100%;
+  --card-foreground: 180 3% 20%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 180 3% 20%;
+  --primary: 26 87% 61%;
+  /* Orange */
+  --primary-foreground: 0 0% 100%;
+  --secondary: 78 50% 52%;
+  /* Green */
+  --secondary-foreground: 0 0% 100%;
+  --muted: 180 2% 45%;
+  --muted-foreground: 180 2% 45%;
+  --accent: 78 50% 52%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 180 2% 90%;
+  --input: 180 2% 90%;
+  --ring: 26 87% 61%;
+  --radius: 0.75rem;
+
+  /* Custom Palette */
+  --app-bg: #FDFBF7;
+  /* Warm Cream */
+  --orange: #F28E46;
+  --green: #9DC545;
+  --charcoal: #333333;
+  --warm-cream: #FDFBF7;
+}
+
+.dark {
+  --background: 180 3% 10%;
+  --foreground: 0 0% 98%;
+  --card: 180 3% 12%;
+  --card-foreground: 0 0% 98%;
+  --popover: 180 3% 12%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 26 87% 61%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 78 50% 52%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 180 2% 65%;
+  --muted-foreground: 180 2% 65%;
+  --accent: 78 50% 52%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 180 3% 20%;
+  --input: 180 3% 20%;
+  --ring: 26 87% 61%;
+
+  /* Custom Palette Dark Mode Adjustments if needed */
+  --app-bg: #1A1A1A;
+  --warm-cream: #252525;
 }
 
 @theme inline {
-  --color-background: var(--bg-app);
-  --color-foreground: var(--text-primary);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
 
   /* Brand colors */
-  --color-orange: var(--brand-orange);
+  --color-orange: var(--orange);
   --color-orange-hover: var(--action-hover);
   --color-orange-surface: var(--action-surface);
-  --color-green: var(--brand-green);
+  --color-green: var(--green);
   --color-green-hover: var(--status-hover);
   --color-green-surface: var(--status-surface);
-  --color-charcoal: var(--brand-charcoal);
+  --color-charcoal: var(--charcoal);
 
   /* Neutrals */
-  --color-muted: var(--text-secondary);
-  --color-border: var(--border-subtle);
-  --color-card-bg: var(--bg-widget);
-  --color-app-bg: var(--bg-app);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-card-bg: var(--card);
+  --color-app-bg: var(--app-bg);
 
   /* Fonts */
   --font-sans: var(--font-outfit);
   --font-serif: var(--font-cormorant);
-
-  /* Type Scale (relative to 17px base) */
-  --text-xs: 0.75rem;
-  /* 12.75px */
-  --text-sm: 0.875rem;
-  /* 14.875px */
-  --text-base: 1rem;
-  /* 17px */
-  --text-lg: 1.125rem;
-  /* 19.125px */
-  --text-xl: 1.25rem;
-  /* 21.25px */
-  --text-2xl: 1.5rem;
-  /* 25.5px */
-  --text-3xl: 2rem;
-  /* 34px */
-  --text-4xl: 2.5rem;
-  /* 42.5px */
-  --text-5xl: 3rem;
-  /* 51px */
-  --text-6xl: 3.75rem;
-  /* 63.75px */
+  --font-caveat: var(--font-caveat);
 }
 
 /* ========== GLOBAL RESET ========== */
@@ -94,6 +129,10 @@ body {
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+}
+
+.font-handwriting {
+  font-family: var(--font-caveat), cursive;
 }
 
 /* ========== GRADIENT UTILITIES ========== */
@@ -314,6 +353,10 @@ textarea:focus-visible {
   }
 }
 
-.animate-shake {
-  animation: shake 0.5s ease-in-out;
+/* ========== PARALLAX UTILITIES ========== */
+.parallax-container {
+  overflow: hidden;
+  border-radius: 2rem;
+  transform: translate3d(0, 0, 0);
+  /* Force hardware acceleration */
 }

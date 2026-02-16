@@ -38,6 +38,9 @@ export function Header() {
                     <Link href="/blog" className="hover:text-orange transition-colors">
                         Blog
                     </Link>
+                    <Link href="/loyalty" className="hover:text-orange transition-colors">
+                        {lang === 'al' ? 'Rewards' : 'Rewards'}
+                    </Link>
                 </nav>
 
                 {/* Center: Logo */}
@@ -141,6 +144,9 @@ export function Header() {
                     </Link>
                     <Link href="/blog" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-orange">
                         Blog
+                    </Link>
+                    <Link href="/loyalty" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-orange">
+                        Rewards
                     </Link>
                 </div>
 
